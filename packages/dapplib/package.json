@@ -1,0 +1,44 @@
+{
+    "name": "@decentology/dappstarter-dapplib",
+    "version": "0.1.0",
+    "description": "> TODO: description",
+    "homepage": "https://github.com/trycrypto/dappstarter-lerna#readme",
+    "license": "MIT",
+    "main": "src/lib/dapp-lib.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/trycrypto/dappstarter-lerna.git"
+    },
+    "scripts": {
+        "clean": "rimraf -rf build && rimraf -rf dist",
+        "dev": "run-s faucet-admin deploy",
+        "deploy": "npx conflux-truffle compile && npx conflux-truffle migrate --reset && node ./src/lib/faucet",
+        "test": "npx conflux-truffle test",
+        "faucet": "node ./src/lib/faucet",
+        "faucet-admin": "node ./src/lib/faucet 1"
+    },
+    "bugs": {
+        "url": "https://github.com/trycrypto/dappstarter-lerna/issues"
+    },
+    "dependencies": {
+        "clipboard": "^2.0.6"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.9.0",
+        "@babel/plugin-proposal-class-properties": "^7.8.3",
+        "@babel/plugin-proposal-decorators": "^7.8.3",
+        "@babel/plugin-transform-runtime": "^7.9.0",
+        "@babel/polyfill": "^7.8.7",
+        "@babel/preset-env": "^7.9.0",
+        "@babel/register": "^7.9.0",
+        "babel-loader": "^8.1.0",
+        "npm-run-all": "^4.1.5",
+        "rimraf": "^3.0.2",
+        "wait-on": "^4.0.1",
+        "webpack": "^4.42.1",
+        "webpack-cli": "^3.3.11",
+        "conflux-truffle": "^0.0.8",
+        "js-conflux-sdk": "^1.5.10",
+        "ethers": "^5.0.26"
+    }
+}
